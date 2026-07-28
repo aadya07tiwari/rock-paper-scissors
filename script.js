@@ -41,8 +41,21 @@ function playRound(humChoice,ranChoice){
 }
 
 
-const ranSelection=getComputerChoice();
+function playGame(){
+    for(let i=0; i<5; i++){
+        const ranSelection=getComputerChoice();
+        const humSelection=getHumanChoice();
+        playRound(humSelection,ranSelection);
 
-const humSelection=getHumanChoice();
+    }
+    console.log(`your score: ${humScore}`);
+    console.log(`comp score: ${compScore}`);
+    if(humScore>compScore){
+        console.log("you won");
+    }else if(humScore<compScore){
+        console.log("Computer won");
+    }else{
+        console.log("It's a tie");
+    }
 
-playRound(humSelection,ranSelection)
+}
