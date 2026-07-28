@@ -2,9 +2,9 @@ let humScore=0;
 let compScore=0;
 
 function getComputerChoice(){
-    let ranChoice=Math.random();
+    let ranChoice=Math.floor(Math.random()*3);
     if(ranChoice==0) return "rock";
-    else if(ranChoice>0) return "paper";
+    else if(ranChoice==1) return "paper";
     else return "scissors";
 }
 
@@ -42,5 +42,7 @@ function playRound(humChoice,ranChoice){
 
 
 const ranSelection=getComputerChoice();
+
 const humSelection=getHumanChoice();
-playRound(humSelection,ranSelection);
+
+playRound(humSelection,ranSelection)
